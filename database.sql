@@ -128,3 +128,27 @@ SELECT * FROM "person" JOIN "person_hobby" ON
 SELECT * FROM "person" 
 JOIN "person_hobby" ON "person"."id" = "person_hobby"."person_id"
 JOIN "hobby" ON "hobby"."id" = "person_hobby"."hobby_id";
+
+--get specific person hobbys
+SELECT "hobby"."description", "person_hobby"."skill"
+FROM "hobby" JOIN "person_hobby"
+ON "hobby"."id" = "person_hobby"."hobby_id"
+WHERE "person_hobby"."person_id" = 3;
+
+-- counting people 
+SELECT count(*) FROM "person";
+
+--get Minnimum value of a skill on the person_hobby table
+SELECT MIN("skill") FROM "person_hobby";
+
+--get max value of a skill on the person_hobby table
+SELECT MAX("skill") FROM "person_hobby";
+
+--get average value of a skill on the person_hobby table
+SELECT AVG("skill") FROM "person_hobby";
+
+--get sum value of a skill on the person_hobby table
+SELECT SUM("skill") FROM "person_hobby";
+
+--get min and max value of a skill on the person_hobby table
+SELECT MIN("skill"), MAX("skill") FROM "person_hobby";
